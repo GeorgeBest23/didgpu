@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
-
+<meta name="generator" content="quarto-1.10.19">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>11&nbsp; Reproducibility &amp; checkpointing – didgpu</title>
+<title>12&nbsp; Reproducibility &amp; checkpointing – didgpu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -63,7 +60,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -78,15 +74,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d64cad229ae5e9b03e304a785e905439.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-c86cab0608ea882fe01ef336a8aac08f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d64cad229ae5e9b03e304a785e905439.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-00b49ed09541ff213a6fdaa504b9df85.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d23cdb75c50f63ab8f522ede76951a6a.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-00b49ed09541ff213a6fdaa504b9df85.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-67ed2d6000758ff64693936f0426fbc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ca6fc6d19f54fb7156b26f550a299d55.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-67ed2d6000758ff64693936f0426fbc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-84f74abd26af4c7bb139c40029164a19.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-734f0ff88d7fef6c36ab4499c5d3d4e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-84f74abd26af4c7bb139c40029164a19.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -112,12 +107,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="../styles.css">
+}</script><link rel="stylesheet" href="../styles.css">
 </head>
-
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -283,9 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">didgpu</span>
@@ -297,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link active" href="../chapters/01-installation.html" aria-current="page"> 
 <span class="menu-text">Get Started</span></a>
   </li>  
@@ -305,8 +294,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-estimators" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Estimators</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-estimators">    
-        <li>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-estimators">
+<li>
     <a class="dropdown-item" href="../chapters/03-dynamic-did.html">
  <span class="dropdown-text">Dynamic DID (didgpu)</span></a>
   </li>  
@@ -327,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Continuous (didgpu_did_continuous)</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item">
     <a class="nav-link" href="../chapters/08-gpu-and-performance.html"> 
 <span class="menu-text">GPU</span></a>
@@ -337,14 +326,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">FAQ</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/JoshuaAmmons/didgpu"> <i class="bi bi-github" role="img" aria-label="GitHub repo">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools tools-wide">
     <a href="https://github.com/JoshuaAmmons/didgpu" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -355,25 +344,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/08-gpu-and-performance.html">Advanced</a></li><li class="breadcrumb-item"><a href="../chapters/10-reproducibility-checkpointing.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Reproducibility &amp; checkpointing</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/08-gpu-and-performance.html">Advanced</a></li><li class="breadcrumb-item"><a href="../chapters/10-reproducibility-checkpointing.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducibility &amp; checkpointing</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome</span></span></a>
@@ -387,8 +370,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01-installation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installation</span></span></a>
@@ -400,8 +383,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quick start</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02b-choosing-estimator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Choosing an estimator</span></span></a>
+  </div>
+</li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
@@ -410,39 +399,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/03-dynamic-did.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic DiD — <code>didgpu()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Dynamic DiD — <code>didgpu()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-callaway-santanna.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Callaway-Sant’Anna — <code>didgpu_cs()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Callaway-Sant’Anna — <code>didgpu_cs()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05-fect-ifect-mc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">FEct / IFEct / MC — <code>didgpu_fect()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">FEct / IFEct / MC — <code>didgpu_fect()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-static-did.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Static DID_M — <code>didgpu_did_static()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Static DID_M — <code>didgpu_did_static()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/07-continuous-treatment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Continuous treatment — <code>didgpu_did_continuous()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Continuous treatment — <code>didgpu_did_continuous()</code></span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -451,33 +440,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/08-gpu-and-performance.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GPU &amp; performance</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GPU &amp; performance</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/09-sensitivity-honestdid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/10-reproducibility-checkpointing.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Reproducibility &amp; checkpointing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducibility &amp; checkpointing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/11-bootstrap-and-clustering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bootstrap variants &amp; clustering</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bootstrap variants &amp; clustering</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -486,54 +475,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/12-methodology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Methodology notes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Methodology notes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/13-faq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">FAQ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">FAQ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/14-changelog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Changelog</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Changelog</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#reproducibility-checkpointing" id="toc-reproducibility-checkpointing" class="nav-link active" data-scroll-target="#reproducibility-checkpointing"><span class="header-section-number">12</span> Reproducibility &amp; checkpointing</a>
+<li>
+<a href="#reproducibility-checkpointing" id="toc-reproducibility-checkpointing" class="nav-link active" data-scroll-target="#reproducibility-checkpointing"><span class="header-section-number">13</span> Reproducibility &amp; checkpointing</a>
   <ul class="collapse">
-  <li><a href="#turn-it-on" id="toc-turn-it-on" class="nav-link" data-scroll-target="#turn-it-on"><span class="header-section-number">12.1</span> Turn it on</a></li>
-  <li><a href="#resume-after-a-crash" id="toc-resume-after-a-crash" class="nav-link" data-scroll-target="#resume-after-a-crash"><span class="header-section-number">12.2</span> Resume after a crash</a></li>
-  <li><a href="#how-same-seed-same-result-works" id="toc-how-same-seed-same-result-works" class="nav-link" data-scroll-target="#how-same-seed-same-result-works"><span class="header-section-number">12.3</span> How “same seed = same result” works</a></li>
-  <li><a href="#aggregating-already-saved-cells" id="toc-aggregating-already-saved-cells" class="nav-link" data-scroll-target="#aggregating-already-saved-cells"><span class="header-section-number">12.4</span> Aggregating already-saved cells</a></li>
-  </ul></li>
+<li><a href="#turn-it-on" id="toc-turn-it-on" class="nav-link" data-scroll-target="#turn-it-on"><span class="header-section-number">13.1</span> Turn it on</a></li>
+  <li><a href="#resume-after-a-crash" id="toc-resume-after-a-crash" class="nav-link" data-scroll-target="#resume-after-a-crash"><span class="header-section-number">13.2</span> Resume after a crash</a></li>
+  <li><a href="#how-same-seed-same-result-works" id="toc-how-same-seed-same-result-works" class="nav-link" data-scroll-target="#how-same-seed-same-result-works"><span class="header-section-number">13.3</span> How “same seed = same result” works</a></li>
+  <li><a href="#aggregating-already-saved-cells" id="toc-aggregating-already-saved-cells" class="nav-link" data-scroll-target="#aggregating-already-saved-cells"><span class="header-section-number">13.4</span> Aggregating already-saved cells</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/JoshuaAmmons/didgpu/edit/main/chapters/10-reproducibility-checkpointing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/JoshuaAmmons/didgpu/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/JoshuaAmmons/didgpu/edit/main/chapters/10-reproducibility-checkpointing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/JoshuaAmmons/didgpu/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/08-gpu-and-performance.html">Advanced</a></li><li class="breadcrumb-item"><a href="../chapters/10-reproducibility-checkpointing.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Reproducibility &amp; checkpointing</span></a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Reproducibility &amp; checkpointing</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/08-gpu-and-performance.html">Advanced</a></li><li class="breadcrumb-item"><a href="../chapters/10-reproducibility-checkpointing.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducibility &amp; checkpointing</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducibility &amp; checkpointing</span>
+</h1>
 </div>
 
 
@@ -547,54 +533,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<section id="reproducibility-checkpointing" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Reproducibility &amp; checkpointing</h1>
+</header><section id="reproducibility-checkpointing" class="level1" data-number="13"><h1 data-number="13">
+<span class="header-section-number">13</span> Reproducibility &amp; checkpointing</h1>
 <p>didgpu’s checkpointing is the difference between a 12-hour bootstrap that resumes after a crash and a 12-hour bootstrap that has to start over.</p>
-<section id="turn-it-on" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="turn-it-on"><span class="header-section-number">12.1</span> Turn it on</h2>
+<section id="turn-it-on" class="level2" data-number="13.1"><h2 data-number="13.1" class="anchored" data-anchor-id="turn-it-on">
+<span class="header-section-number">13.1</span> Turn it on</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">didgpu</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  panel, ...,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">bootstrap_reps =</span> <span class="dv">2000</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">checkpoint_dir =</span> <span class="st">"~/didgpu-runs/2026-05-28-fit"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed           =</span> <span class="dv">17</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu">didgpu</span><span class="op">(</span></span>
+<span>  <span class="va">panel</span>, <span class="va">...</span>,</span>
+<span>  bootstrap_reps <span class="op">=</span> <span class="fl">2000</span>,</span>
+<span>  checkpoint_dir <span class="op">=</span> <span class="st">"~/didgpu-runs/2026-05-28-fit"</span>,</span>
+<span>  seed           <span class="op">=</span> <span class="fl">17</span></span>
+<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>didgpu writes one small RDS file per bootstrap cell (the per-rep sufficient statistics, not the panel — usually a few KB each).</p>
-</section>
-<section id="resume-after-a-crash" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="resume-after-a-crash"><span class="header-section-number">12.2</span> Resume after a crash</h2>
+</section><section id="resume-after-a-crash" class="level2" data-number="13.2"><h2 data-number="13.2" class="anchored" data-anchor-id="resume-after-a-crash">
+<span class="header-section-number">13.2</span> Resume after a crash</h2>
 <p>Just rerun the <strong>same call</strong> with the <strong>same</strong> <code>checkpoint_dir</code> and <code>seed</code>. didgpu reads the existing cells, picks up at the next missing one, and finishes:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">didgpu</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  panel, ...,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">bootstrap_reps =</span> <span class="dv">2000</span>,</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">checkpoint_dir =</span> <span class="st">"~/didgpu-runs/2026-05-28-fit"</span>,  <span class="co"># same path</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed           =</span> <span class="dv">17</span>                                <span class="co"># same seed</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu">didgpu</span><span class="op">(</span></span>
+<span>  <span class="va">panel</span>, <span class="va">...</span>,</span>
+<span>  bootstrap_reps <span class="op">=</span> <span class="fl">2000</span>,</span>
+<span>  checkpoint_dir <span class="op">=</span> <span class="st">"~/didgpu-runs/2026-05-28-fit"</span>,  <span class="co"># same path</span></span>
+<span>  seed           <span class="op">=</span> <span class="fl">17</span>                                <span class="co"># same seed</span></span>
+<span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>No <code>tryCatch</code>, no manual sharding, no “what was I up to?” archaeology.</p>
-</section>
-<section id="how-same-seed-same-result-works" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="how-same-seed-same-result-works"><span class="header-section-number">12.3</span> How “same seed = same result” works</h2>
+</section><section id="how-same-seed-same-result-works" class="level2" data-number="13.3"><h2 data-number="13.3" class="anchored" data-anchor-id="how-same-seed-same-result-works">
+<span class="header-section-number">13.3</span> How “same seed = same result” works</h2>
 <p>didgpu’s bootstrap uses a deterministic per-cell seed derived from <code>(seed, replicate_index)</code>. So:</p>
 <ul>
 <li>Cells produced before the crash are bit-identical to what the resumed run would produce.</li>
 <li>The aggregator sees a complete cell set regardless of which run wrote each one.</li>
 <li>Bootstrap point estimate, SE, CI, and joint p-values are reproducible across crashes.</li>
-</ul>
-</section>
-<section id="aggregating-already-saved-cells" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="aggregating-already-saved-cells"><span class="header-section-number">12.4</span> Aggregating already-saved cells</h2>
+</ul></section><section id="aggregating-already-saved-cells" class="level2" data-number="13.4"><h2 data-number="13.4" class="anchored" data-anchor-id="aggregating-already-saved-cells">
+<span class="header-section-number">13.4</span> Aggregating already-saved cells</h2>
 <p>If you want to look at a partial run without re-fitting:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>partial <span class="ot">&lt;-</span> <span class="fu">didgpu_aggregate_cells</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">checkpoint_dir =</span> <span class="st">"~/didgpu-runs/2026-05-28-fit"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>partial</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">partial</span> <span class="op">&lt;-</span> <span class="fu">didgpu_aggregate_cells</span><span class="op">(</span></span>
+<span>  checkpoint_dir <span class="op">=</span> <span class="st">"~/didgpu-runs/2026-05-28-fit"</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">partial</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Returns the aggregated fit using whatever cells exist on disk. Useful for sanity-checking convergence while a long run is still going.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -612,11 +591,7 @@ Tip
 </div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1028,21 +1003,18 @@ Tip
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../chapters/09-sensitivity-honestdid.html" class="pagination-link" aria-label="Sensitivity analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/11-bootstrap-and-clustering.html" class="pagination-link" aria-label="Bootstrap variants &amp; clustering">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bootstrap variants &amp; clustering</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bootstrap variants &amp; clustering</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 

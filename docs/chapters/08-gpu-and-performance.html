@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
-
+<meta name="generator" content="quarto-1.10.19">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>9&nbsp; GPU &amp; performance – didgpu</title>
+<title>10&nbsp; GPU &amp; performance – didgpu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -63,7 +60,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -78,15 +74,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d64cad229ae5e9b03e304a785e905439.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-c86cab0608ea882fe01ef336a8aac08f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d64cad229ae5e9b03e304a785e905439.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-00b49ed09541ff213a6fdaa504b9df85.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d23cdb75c50f63ab8f522ede76951a6a.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-00b49ed09541ff213a6fdaa504b9df85.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-67ed2d6000758ff64693936f0426fbc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ca6fc6d19f54fb7156b26f550a299d55.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-67ed2d6000758ff64693936f0426fbc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-84f74abd26af4c7bb139c40029164a19.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-734f0ff88d7fef6c36ab4499c5d3d4e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-84f74abd26af4c7bb139c40029164a19.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -112,12 +107,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="../styles.css">
+}</script><link rel="stylesheet" href="../styles.css">
 </head>
-
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -283,9 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">didgpu</span>
@@ -297,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link active" href="../chapters/01-installation.html" aria-current="page"> 
 <span class="menu-text">Get Started</span></a>
   </li>  
@@ -305,8 +294,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-estimators" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Estimators</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-estimators">    
-        <li>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-estimators">
+<li>
     <a class="dropdown-item" href="../chapters/03-dynamic-did.html">
  <span class="dropdown-text">Dynamic DID (didgpu)</span></a>
   </li>  
@@ -327,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Continuous (didgpu_did_continuous)</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item">
     <a class="nav-link" href="../chapters/08-gpu-and-performance.html"> 
 <span class="menu-text">GPU</span></a>
@@ -337,14 +326,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">FAQ</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/JoshuaAmmons/didgpu"> <i class="bi bi-github" role="img" aria-label="GitHub repo">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools tools-wide">
     <a href="https://github.com/JoshuaAmmons/didgpu" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -355,25 +344,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/08-gpu-and-performance.html">Advanced</a></li><li class="breadcrumb-item"><a href="../chapters/08-gpu-and-performance.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GPU &amp; performance</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/08-gpu-and-performance.html">Advanced</a></li><li class="breadcrumb-item"><a href="../chapters/08-gpu-and-performance.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GPU &amp; performance</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome</span></span></a>
@@ -387,8 +370,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01-installation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installation</span></span></a>
@@ -400,8 +383,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quick start</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02b-choosing-estimator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Choosing an estimator</span></span></a>
+  </div>
+</li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
@@ -410,39 +399,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/03-dynamic-did.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic DiD — <code>didgpu()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Dynamic DiD — <code>didgpu()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-callaway-santanna.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Callaway-Sant’Anna — <code>didgpu_cs()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Callaway-Sant’Anna — <code>didgpu_cs()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05-fect-ifect-mc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">FEct / IFEct / MC — <code>didgpu_fect()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">FEct / IFEct / MC — <code>didgpu_fect()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-static-did.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Static DID_M — <code>didgpu_did_static()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Static DID_M — <code>didgpu_did_static()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/07-continuous-treatment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Continuous treatment — <code>didgpu_did_continuous()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Continuous treatment — <code>didgpu_did_continuous()</code></span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
@@ -451,33 +440,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/08-gpu-and-performance.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GPU &amp; performance</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GPU &amp; performance</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/09-sensitivity-honestdid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/10-reproducibility-checkpointing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Reproducibility &amp; checkpointing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducibility &amp; checkpointing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/11-bootstrap-and-clustering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bootstrap variants &amp; clustering</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bootstrap variants &amp; clustering</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
@@ -486,54 +475,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/12-methodology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Methodology notes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Methodology notes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/13-faq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">FAQ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">FAQ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/14-changelog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Changelog</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Changelog</span></span></a>
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#gpu-performance" id="toc-gpu-performance" class="nav-link active" data-scroll-target="#gpu-performance"><span class="header-section-number">10</span> GPU &amp; performance</a>
+<li>
+<a href="#gpu-performance" id="toc-gpu-performance" class="nav-link active" data-scroll-target="#gpu-performance"><span class="header-section-number">11</span> GPU &amp; performance</a>
   <ul class="collapse">
-  <li><a href="#when-the-gpu-pays-for-itself" id="toc-when-the-gpu-pays-for-itself" class="nav-link" data-scroll-target="#when-the-gpu-pays-for-itself"><span class="header-section-number">10.1</span> When the GPU pays for itself</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup"><span class="header-section-number">10.2</span> Setup</a></li>
-  <li><a href="#picking-a-backend" id="toc-picking-a-backend" class="nav-link" data-scroll-target="#picking-a-backend"><span class="header-section-number">10.3</span> Picking a backend</a></li>
-  <li><a href="#bookkeeping-which-blackwell-card" id="toc-bookkeeping-which-blackwell-card" class="nav-link" data-scroll-target="#bookkeeping-which-blackwell-card"><span class="header-section-number">10.4</span> Bookkeeping: which Blackwell card?</a></li>
-  </ul></li>
+<li><a href="#when-the-gpu-pays-for-itself" id="toc-when-the-gpu-pays-for-itself" class="nav-link" data-scroll-target="#when-the-gpu-pays-for-itself"><span class="header-section-number">11.1</span> When the GPU pays for itself</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup"><span class="header-section-number">11.2</span> Setup</a></li>
+  <li><a href="#picking-a-backend" id="toc-picking-a-backend" class="nav-link" data-scroll-target="#picking-a-backend"><span class="header-section-number">11.3</span> Picking a backend</a></li>
+  <li><a href="#bookkeeping-which-blackwell-card" id="toc-bookkeeping-which-blackwell-card" class="nav-link" data-scroll-target="#bookkeeping-which-blackwell-card"><span class="header-section-number">11.4</span> Bookkeeping: which Blackwell card?</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/JoshuaAmmons/didgpu/edit/main/chapters/08-gpu-and-performance.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/JoshuaAmmons/didgpu/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/JoshuaAmmons/didgpu/edit/main/chapters/08-gpu-and-performance.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/JoshuaAmmons/didgpu/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/08-gpu-and-performance.html">Advanced</a></li><li class="breadcrumb-item"><a href="../chapters/08-gpu-and-performance.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GPU &amp; performance</span></a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GPU &amp; performance</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/08-gpu-and-performance.html">Advanced</a></li><li class="breadcrumb-item"><a href="../chapters/08-gpu-and-performance.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GPU &amp; performance</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GPU &amp; performance</span>
+</h1>
 </div>
 
 
@@ -547,36 +533,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<section id="gpu-performance" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> GPU &amp; performance</h1>
+</header><section id="gpu-performance" class="level1" data-number="11"><h1 data-number="11">
+<span class="header-section-number">11</span> GPU &amp; performance</h1>
 <p>The CUDA backend isn’t a gimmick. On a typical event-study panel with a few hundred units, twelve periods, and 500 cluster-bootstrap reps, the speedups look roughly like:</p>
 <table class="caption-top table">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Estimator</th>
 <th>CPU (r)</th>
 <th>CUDA</th>
 <th>Speedup</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
-<td><code>didgpu()</code> (dynamic DID)</td>
+<td>
+<code>didgpu()</code> (dynamic DID)</td>
 <td>~95 s</td>
 <td>~6 s</td>
 <td><strong>~16×</strong></td>
 </tr>
 <tr class="even">
-<td><code>didgpu_cs()</code> (CS-DID, DR + cluster boot)</td>
+<td>
+<code>didgpu_cs()</code> (CS-DID, DR + cluster boot)</td>
 <td>~210 s</td>
 <td>~9 s</td>
 <td><strong>~23×</strong></td>
 </tr>
 <tr class="odd">
-<td><code>didgpu_fect()</code> (IFEct + boot)</td>
+<td>
+<code>didgpu_fect()</code> (IFEct + boot)</td>
 <td>~430 s</td>
 <td>~14 s</td>
 <td><strong>~31×</strong></td>
@@ -584,24 +568,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>(Indicative numbers on an RTX PRO Blackwell with CUDA 13.2 and 60k-cell panels. Exact numbers depend on panel shape and bootstrap rep count. See <code>tools/bench-*.R</code> for the reproducible benchmark scripts.)</p>
-<section id="when-the-gpu-pays-for-itself" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="when-the-gpu-pays-for-itself"><span class="header-section-number">10.1</span> When the GPU pays for itself</h2>
+<section id="when-the-gpu-pays-for-itself" class="level2" data-number="11.1"><h2 data-number="11.1" class="anchored" data-anchor-id="when-the-gpu-pays-for-itself">
+<span class="header-section-number">11.1</span> When the GPU pays for itself</h2>
 <p>The fixed cost of a GPU call is non-trivial (~10 ms per kernel launch), so the breakeven point is around a few thousand panel cells or ~50 bootstrap reps, whichever comes first. Below that, the R backend is fine and sometimes faster. Above it, the GPU wins by an order of magnitude.</p>
-</section>
-<section id="setup" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="setup"><span class="header-section-number">10.2</span> Setup</h2>
+</section><section id="setup" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="setup">
+<span class="header-section-number">11.2</span> Setup</h2>
 <p>Detailed CUDA setup instructions (Windows + Linux, including the “DLL relocation” workaround for CUDA 13) live in <a href="https://github.com/JoshuaAmmons/didgpu/blob/main/inst/doc/cuda_setup.md"><code>inst/doc/cuda_setup.md</code></a>. The short version:</p>
 <ul>
 <li>Install the NVIDIA CUDA Toolkit (≥ 12.0).</li>
 <li>On Linux: nothing else.</li>
 <li>On Windows: install Rtools45 + the MSVC Build Tools (nvcc on Windows invokes cl.exe internally), then either set <code>CUDA_PATH</code> or rely on the default <code>Program Files</code> install location.</li>
-<li>Reinstall didgpu from source. Verify with <code>didgpu::didgpu_has_cuda_support()</code>.</li>
-</ul>
-</section>
-<section id="picking-a-backend" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="picking-a-backend"><span class="header-section-number">10.3</span> Picking a backend</h2>
+<li>Reinstall didgpu from source. Verify with <code><a href="https://rdrr.io/pkg/didgpu/man/didgpu_has_cuda_support.html">didgpu::didgpu_has_cuda_support()</a></code>.</li>
+</ul></section><section id="picking-a-backend" class="level2" data-number="11.3"><h2 data-number="11.3" class="anchored" data-anchor-id="picking-a-backend">
+<span class="header-section-number">11.3</span> Picking a backend</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">didgpu</span>(panel, ..., <span class="at">backend =</span> <span class="st">"auto"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu">didgpu</span><span class="op">(</span><span class="va">panel</span>, <span class="va">...</span>, backend <span class="op">=</span> <span class="st">"auto"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><code>backend = "auto"</code> does the right thing:</p>
 <ol type="1">
@@ -610,9 +591,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>and if that path doesn’t support a feature you asked for (controls, continuous treatment, normalized estimator), it falls back further to the pure-R backend.</li>
 </ol>
 <p>You can force a backend explicitly with <code>backend = "r"</code>, <code>"cpu"</code>, or <code>"cuda"</code>. The output of any backend is bit-for-bit identical on the deterministic point estimate; only the bootstrap RNG stream differs between the GPU and CPU bootstraps (the SEs converge as B → ∞).</p>
-</section>
-<section id="bookkeeping-which-blackwell-card" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="bookkeeping-which-blackwell-card"><span class="header-section-number">10.4</span> Bookkeeping: which Blackwell card?</h2>
+</section><section id="bookkeeping-which-blackwell-card" class="level2" data-number="11.4"><h2 data-number="11.4" class="anchored" data-anchor-id="bookkeeping-which-blackwell-card">
+<span class="header-section-number">11.4</span> Bookkeeping: which Blackwell card?</h2>
 <p>If you have a current-generation Blackwell card (RTX PRO Blackwell, RTX 50-series), make sure you’re on <strong>didgpu ≥ 0.1.1</strong> — earlier versions silently returned all-zero CUDA results on Blackwell because the kernels were compiled only for sm_75–sm_90. The fix added <code>sm_120</code> and a <code>compute_120</code> PTX fallback; this is in every release from 0.1.1 onward.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -629,11 +609,7 @@ Tip
 </div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1045,21 +1021,18 @@ Tip
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../chapters/07-continuous-treatment.html" class="pagination-link" aria-label="Continuous treatment — `didgpu_did_continuous()`">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Continuous treatment — <code>didgpu_did_continuous()</code></span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Continuous treatment — <code>didgpu_did_continuous()</code></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/09-sensitivity-honestdid.html" class="pagination-link" aria-label="Sensitivity analysis">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 

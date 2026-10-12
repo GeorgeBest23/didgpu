@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; Methodology notes – didgpu</title>
+<title>14&nbsp; Methodology notes – didgpu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -62,14 +62,14 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d64cad229ae5e9b03e304a785e905439.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-c86cab0608ea882fe01ef336a8aac08f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d64cad229ae5e9b03e304a785e905439.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-00b49ed09541ff213a6fdaa504b9df85.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d23cdb75c50f63ab8f522ede76951a6a.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-00b49ed09541ff213a6fdaa504b9df85.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-67ed2d6000758ff64693936f0426fbc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ca6fc6d19f54fb7156b26f550a299d55.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-67ed2d6000758ff64693936f0426fbc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-84f74abd26af4c7bb139c40029164a19.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-734f0ff88d7fef6c36ab4499c5d3d4e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-84f74abd26af4c7bb139c40029164a19.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -374,7 +374,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/12-methodology.html">Reference</a></li><li class="breadcrumb-item"><a href="../chapters/12-methodology.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Methodology notes</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/12-methodology.html">Reference</a></li><li class="breadcrumb-item"><a href="../chapters/12-methodology.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Methodology notes</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -413,6 +413,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quick start</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02b-choosing-estimator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Choosing an estimator</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -427,31 +433,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/03-dynamic-did.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic DiD — <code>didgpu()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Dynamic DiD — <code>didgpu()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-callaway-santanna.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Callaway-Sant’Anna — <code>didgpu_cs()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Callaway-Sant’Anna — <code>didgpu_cs()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05-fect-ifect-mc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">FEct / IFEct / MC — <code>didgpu_fect()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">FEct / IFEct / MC — <code>didgpu_fect()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-static-did.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Static DID_M — <code>didgpu_did_static()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Static DID_M — <code>didgpu_did_static()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/07-continuous-treatment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Continuous treatment — <code>didgpu_did_continuous()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Continuous treatment — <code>didgpu_did_continuous()</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -468,25 +474,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/08-gpu-and-performance.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GPU &amp; performance</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GPU &amp; performance</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/09-sensitivity-honestdid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/10-reproducibility-checkpointing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Reproducibility &amp; checkpointing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducibility &amp; checkpointing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/11-bootstrap-and-clustering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bootstrap variants &amp; clustering</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bootstrap variants &amp; clustering</span></span></a>
   </div>
 </li>
       </ul>
@@ -503,19 +509,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/12-methodology.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Methodology notes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Methodology notes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/13-faq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">FAQ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">FAQ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/14-changelog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Changelog</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Changelog</span></span></a>
   </div>
 </li>
       </ul>
@@ -530,13 +536,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#methodology-notes" id="toc-methodology-notes" class="nav-link active" data-scroll-target="#methodology-notes"><span class="header-section-number">14</span> Methodology notes</a>
+  <li><a href="#methodology-notes" id="toc-methodology-notes" class="nav-link active" data-scroll-target="#methodology-notes"><span class="header-section-number">15</span> Methodology notes</a>
   <ul class="collapse">
-  <li><a href="#dynamic-did-didgpu" id="toc-dynamic-did-didgpu" class="nav-link" data-scroll-target="#dynamic-did-didgpu"><span class="header-section-number">14.1</span> Dynamic DiD — <code>didgpu()</code></a></li>
-  <li><a href="#callaway-santanna-didgpu_cs" id="toc-callaway-santanna-didgpu_cs" class="nav-link" data-scroll-target="#callaway-santanna-didgpu_cs"><span class="header-section-number">14.2</span> Callaway-Sant’Anna — <code>didgpu_cs()</code></a></li>
-  <li><a href="#fect-ifect-mc-didgpu_fect" id="toc-fect-ifect-mc-didgpu_fect" class="nav-link" data-scroll-target="#fect-ifect-mc-didgpu_fect"><span class="header-section-number">14.3</span> FEct / IFEct / MC — <code>didgpu_fect()</code></a></li>
-  <li><a href="#reproducibility-seeding" id="toc-reproducibility-seeding" class="nav-link" data-scroll-target="#reproducibility-seeding"><span class="header-section-number">14.4</span> Reproducibility &amp; seeding</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">14.5</span> References</a></li>
+  <li><a href="#dynamic-did-didgpu" id="toc-dynamic-did-didgpu" class="nav-link" data-scroll-target="#dynamic-did-didgpu"><span class="header-section-number">15.1</span> Dynamic DiD — <code>didgpu()</code></a></li>
+  <li><a href="#callaway-santanna-didgpu_cs" id="toc-callaway-santanna-didgpu_cs" class="nav-link" data-scroll-target="#callaway-santanna-didgpu_cs"><span class="header-section-number">15.2</span> Callaway-Sant’Anna — <code>didgpu_cs()</code></a></li>
+  <li><a href="#fect-ifect-mc-didgpu_fect" id="toc-fect-ifect-mc-didgpu_fect" class="nav-link" data-scroll-target="#fect-ifect-mc-didgpu_fect"><span class="header-section-number">15.3</span> FEct / IFEct / MC — <code>didgpu_fect()</code></a></li>
+  <li><a href="#reproducibility-seeding" id="toc-reproducibility-seeding" class="nav-link" data-scroll-target="#reproducibility-seeding"><span class="header-section-number">15.4</span> Reproducibility &amp; seeding</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">15.5</span> References</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/JoshuaAmmons/didgpu/edit/main/chapters/12-methodology.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/JoshuaAmmons/didgpu/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -545,9 +551,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/12-methodology.html">Reference</a></li><li class="breadcrumb-item"><a href="../chapters/12-methodology.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Methodology notes</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/12-methodology.html">Reference</a></li><li class="breadcrumb-item"><a href="../chapters/12-methodology.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Methodology notes</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Methodology notes</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Methodology notes</span></h1>
 </div>
 
 
@@ -564,11 +570,11 @@ window.Quarto = {
 </header>
 
 
-<section id="methodology-notes" class="level1" data-number="14">
-<h1 data-number="14"><span class="header-section-number">14</span> Methodology notes</h1>
+<section id="methodology-notes" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> Methodology notes</h1>
 <p>This chapter compiles the internal-implementation notes for each estimator family. It is mostly of interest to people verifying numerical equivalence with the reference packages, or porting didgpu’s algorithms to another language.</p>
-<section id="dynamic-did-didgpu" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="dynamic-did-didgpu"><span class="header-section-number">14.1</span> Dynamic DiD — <code>didgpu()</code></h2>
+<section id="dynamic-did-didgpu" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="dynamic-did-didgpu"><span class="header-section-number">15.1</span> Dynamic DiD — <code>didgpu()</code></h2>
 <p>The estimator is described in two papers. The current implementation follows the algorithm of <span class="citation" data-cites="dechaisemartin2024dynamic">@dechaisemartin2024dynamic</span> verbatim, with the following implementation notes specific to this package:</p>
 <ul>
 <li><strong>Same-switchers gate.</strong> The package’s <code>same_switchers</code> option applies a per-group <code>still_switcher_XX</code> indicator computed before the per-event-time loop. The placebo block uses the same gate (verified against <code>DIDmultiplegtDYN</code> 2.3.x).</li>
@@ -577,23 +583,23 @@ window.Quarto = {
 <li><strong>Trailing unestimable horizons.</strong> When the data-availability clamp <span class="math inline">\(\max L_g\)</span> permits a horizon that no switcher reaches with a valid control, didgpu drops the trailing NA row to match the reference’s reported horizon count.</li>
 </ul>
 </section>
-<section id="callaway-santanna-didgpu_cs" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="callaway-santanna-didgpu_cs"><span class="header-section-number">14.2</span> Callaway-Sant’Anna — <code>didgpu_cs()</code></h2>
+<section id="callaway-santanna-didgpu_cs" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="callaway-santanna-didgpu_cs"><span class="header-section-number">15.2</span> Callaway-Sant’Anna — <code>didgpu_cs()</code></h2>
 <ul>
 <li><strong>Inner estimators.</strong> OR uses an in-thread Cholesky per (g, t); IPW / DR add a per-cell IRLS logistic propensity model replicating <code>stats::glm.fit</code> to ~1e-8.</li>
 <li><strong>Influence functions.</strong> Computed per-row, then aggregated per the requested <code>aggregation</code> (event / group / calendar / overall).</li>
 <li><strong>Bootstrap.</strong> Cluster and multiplier variants both supported; the multiplier variant uses per-unit IFs and is the recommended inference for large B.</li>
 </ul>
 </section>
-<section id="fect-ifect-mc-didgpu_fect" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="fect-ifect-mc-didgpu_fect"><span class="header-section-number">14.3</span> FEct / IFEct / MC — <code>didgpu_fect()</code></h2>
+<section id="fect-ifect-mc-didgpu_fect" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="fect-ifect-mc-didgpu_fect"><span class="header-section-number">15.3</span> FEct / IFEct / MC — <code>didgpu_fect()</code></h2>
 <ul>
 <li><strong>IFE.</strong> Two-pass Gauss-Seidel sweep on the factor matrix, then a truncated SVD via the GPU’s cuSOLVER. CV on rank selection.</li>
 <li><strong>MC.</strong> Soft-impute via <code>cuSolverDnDgesvd</code>, with the nuclear-norm <span class="math inline">\(\lambda\)</span> chosen by CV from a log grid.</li>
 </ul>
 </section>
-<section id="reproducibility-seeding" class="level2" data-number="14.4">
-<h2 data-number="14.4" class="anchored" data-anchor-id="reproducibility-seeding"><span class="header-section-number">14.4</span> Reproducibility &amp; seeding</h2>
+<section id="reproducibility-seeding" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="reproducibility-seeding"><span class="header-section-number">15.4</span> Reproducibility &amp; seeding</h2>
 <p>didgpu’s bootstrap seed scheme is a deterministic <code>hash(seed, replicate_index)</code> per cell. This guarantees that:</p>
 <ul>
 <li>same seed + same cells = same result</li>
@@ -614,8 +620,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="references" class="level2" data-number="14.5">
-<h2 data-number="14.5" class="anchored" data-anchor-id="references"><span class="header-section-number">14.5</span> References</h2>
+<section id="references" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="references"><span class="header-section-number">15.5</span> References</h2>
 <div id="refs" role="list" style="display: none">
 
 </div>
@@ -1041,12 +1047,12 @@ Tip
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../chapters/11-bootstrap-and-clustering.html" class="pagination-link" aria-label="Bootstrap variants &amp; clustering">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bootstrap variants &amp; clustering</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bootstrap variants &amp; clustering</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../chapters/13-faq.html" class="pagination-link" aria-label="FAQ">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">FAQ</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">FAQ</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

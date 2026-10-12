@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,7 +70,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/03-dynamic-did.html" rel="next">
+<link href="../chapters/02b-choosing-estimator.html" rel="next">
 <link href="../chapters/01-installation.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -78,14 +78,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d64cad229ae5e9b03e304a785e905439.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-c86cab0608ea882fe01ef336a8aac08f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d64cad229ae5e9b03e304a785e905439.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-00b49ed09541ff213a6fdaa504b9df85.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d23cdb75c50f63ab8f522ede76951a6a.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-00b49ed09541ff213a6fdaa504b9df85.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-67ed2d6000758ff64693936f0426fbc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ca6fc6d19f54fb7156b26f550a299d55.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-67ed2d6000758ff64693936f0426fbc1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-84f74abd26af4c7bb139c40029164a19.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-734f0ff88d7fef6c36ab4499c5d3d4e8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-84f74abd26af4c7bb139c40029164a19.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -114,35 +114,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -429,6 +400,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quick start</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02b-choosing-estimator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Choosing an estimator</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -443,31 +420,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/03-dynamic-did.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic DiD — <code>didgpu()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Dynamic DiD — <code>didgpu()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-callaway-santanna.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Callaway-Sant’Anna — <code>didgpu_cs()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Callaway-Sant’Anna — <code>didgpu_cs()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05-fect-ifect-mc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">FEct / IFEct / MC — <code>didgpu_fect()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">FEct / IFEct / MC — <code>didgpu_fect()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-static-did.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Static DID_M — <code>didgpu_did_static()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Static DID_M — <code>didgpu_did_static()</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/07-continuous-treatment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Continuous treatment — <code>didgpu_did_continuous()</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Continuous treatment — <code>didgpu_did_continuous()</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -484,25 +461,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/08-gpu-and-performance.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">GPU &amp; performance</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">GPU &amp; performance</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/09-sensitivity-honestdid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Sensitivity analysis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/10-reproducibility-checkpointing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Reproducibility &amp; checkpointing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Reproducibility &amp; checkpointing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/11-bootstrap-and-clustering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bootstrap variants &amp; clustering</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Bootstrap variants &amp; clustering</span></span></a>
   </div>
 </li>
       </ul>
@@ -519,19 +496,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/12-methodology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Methodology notes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Methodology notes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/13-faq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">FAQ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">FAQ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/14-changelog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Changelog</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Changelog</span></span></a>
   </div>
 </li>
       </ul>
@@ -546,16 +523,15 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#quick-start" id="toc-quick-start" class="nav-link active" data-scroll-target="#quick-start"><span class="header-section-number">4</span> Quick start</a>
-  <ul class="collapse">
-  <li><a href="#generate-a-panel" id="toc-generate-a-panel" class="nav-link" data-scroll-target="#generate-a-panel"><span class="header-section-number">4.1</span> Generate a panel</a></li>
-  <li><a href="#fit-the-dynamic-did-estimator" id="toc-fit-the-dynamic-did-estimator" class="nav-link" data-scroll-target="#fit-the-dynamic-did-estimator"><span class="header-section-number">4.2</span> Fit the dynamic DiD estimator</a></li>
-  <li><a href="#add-a-bootstrap" id="toc-add-a-bootstrap" class="nav-link" data-scroll-target="#add-a-bootstrap"><span class="header-section-number">4.3</span> Add a bootstrap</a></li>
-  <li><a href="#plot-the-event-study" id="toc-plot-the-event-study" class="nav-link" data-scroll-target="#plot-the-event-study"><span class="header-section-number">4.4</span> Plot the event study</a></li>
-  <li><a href="#pull-pieces-out-with-broom-style-helpers" id="toc-pull-pieces-out-with-broom-style-helpers" class="nav-link" data-scroll-target="#pull-pieces-out-with-broom-style-helpers"><span class="header-section-number">4.5</span> Pull pieces out with broom-style helpers</a></li>
-  <li><a href="#save-a-fitted-model" id="toc-save-a-fitted-model" class="nav-link" data-scroll-target="#save-a-fitted-model"><span class="header-section-number">4.6</span> Save a fitted model</a></li>
-  <li><a href="#where-to-go-next" id="toc-where-to-go-next" class="nav-link" data-scroll-target="#where-to-go-next"><span class="header-section-number">4.7</span> Where to go next</a></li>
-  </ul></li>
+  <li><a href="#generate-a-panel" id="toc-generate-a-panel" class="nav-link active" data-scroll-target="#generate-a-panel"><span class="header-section-number">3.1</span> Generate a panel</a></li>
+  <li><a href="#fit-the-dynamic-did-estimator" id="toc-fit-the-dynamic-did-estimator" class="nav-link" data-scroll-target="#fit-the-dynamic-did-estimator"><span class="header-section-number">3.2</span> Fit the dynamic DiD estimator</a></li>
+  <li><a href="#read-the-output" id="toc-read-the-output" class="nav-link" data-scroll-target="#read-the-output"><span class="header-section-number">3.3</span> Read the output</a></li>
+  <li><a href="#access-the-fitted-object" id="toc-access-the-fitted-object" class="nav-link" data-scroll-target="#access-the-fitted-object"><span class="header-section-number">3.4</span> Access the fitted object</a></li>
+  <li><a href="#plot-the-event-study-estimates" id="toc-plot-the-event-study-estimates" class="nav-link" data-scroll-target="#plot-the-event-study-estimates"><span class="header-section-number">3.5</span> Plot the event-study estimates</a></li>
+  <li><a href="#access-the-estimates-programmatically" id="toc-access-the-estimates-programmatically" class="nav-link" data-scroll-target="#access-the-estimates-programmatically"><span class="header-section-number">3.6</span> Access the estimates programmatically</a></li>
+  <li><a href="#when-to-add-a-bootstrap" id="toc-when-to-add-a-bootstrap" class="nav-link" data-scroll-target="#when-to-add-a-bootstrap"><span class="header-section-number">3.7</span> When to add a bootstrap</a></li>
+  <li><a href="#save-and-reload-a-fit" id="toc-save-and-reload-a-fit" class="nav-link" data-scroll-target="#save-and-reload-a-fit"><span class="header-section-number">3.8</span> Save and reload a fit</a></li>
+  <li><a href="#where-to-go-next" id="toc-where-to-go-next" class="nav-link" data-scroll-target="#where-to-go-next"><span class="header-section-number">3.9</span> Where to go next</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/JoshuaAmmons/didgpu/edit/main/chapters/02-quickstart.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/JoshuaAmmons/didgpu/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -582,13 +558,11 @@ window.Quarto = {
 </header>
 
 
-<section id="quick-start" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Quick start</h1>
-<p>Five minutes, one panel, one fit, one event-study plot. This chapter uses the simulator that ships with the package so you can run every line of code yourself without any extra data.</p>
-<section id="generate-a-panel" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="generate-a-panel"><span class="header-section-number">4.1</span> Generate a panel</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(didgpu)</span>
+<p>Five minutes is enough to estimate a DiD model with didgpu. This chapter uses the package’s built-in simulator so you can reproduce every example without assembling real-world data first.</p>
+<section id="generate-a-panel" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="generate-a-panel"><span class="header-section-number">3.1</span> Generate a panel</h2>
+<p>didgpu includes <code>didgpu_simulate_panel()</code>, which creates a tidy long panel with a known treatment effect built into the data-generating process. We use it throughout this chapter so the values you see on screen correspond directly to the examples in the text.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(didgpu)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>panel <span class="ot">&lt;-</span> <span class="fu">didgpu_simulate_panel</span>(</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_units          =</span> <span class="dv">60</span>,</span>
@@ -601,89 +575,282 @@ window.Quarto = {
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed             =</span> <span class="dv">17</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(panel)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><code>panel</code> is a tidy long data frame with columns <code>unit</code>, <code>period</code>, <code>Y</code>, <code>D</code>. About 60% of the units switch from control to treated at some period between 4 and 9; the true event-study profile (relative to the switch period) is <code>c(0.5, 1.0, 1.2, 1.0, 0.8)</code>.</p>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(panel)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   unit period D          Y</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1    1      1 0 -0.3859350</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2    1      2 0  0.9423873</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    1      3 0 -0.1117813</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4    1      4 0 -0.6311500</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5    1      5 0 -0.5164363</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6    1      6 0 -0.5039224</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(panel)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 720</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>panel</code> is a long-form data frame with 720 rows and four columns:</p>
+<ul>
+<li><code>unit</code> identifies the unit (1 through 60).</li>
+<li><code>period</code> indexes time (1 through 12).</li>
+<li><code>D</code> is the treatment indicator: 0 before treatment and 1 after treatment.</li>
+<li><code>Y</code> is the observed outcome.</li>
+</ul>
+<p>What this setup is doing:</p>
+<ul>
+<li><strong>60 units and 12 periods</strong> produce 720 total observations. This is small enough to run quickly, yet large enough to give the estimator meaningful variation.</li>
+<li><strong>60% treated</strong> means that 36 units eventually receive treatment, while 24 units remain never-treated. Those never-treated units provide the clean comparison group.</li>
+<li><strong><code>min_treat_period = 4</code> and <code>max_treat_period = 9</code></strong> imply that each treated unit adopts treatment at a random period between 4 and 9. Different units switch at different times, which is the staggered-adoption setting that the modern DiD estimators in didgpu are designed to handle.</li>
+<li><strong><code>tau_profile = c(0.5, 1.0, 1.2, 1.0, 0.8)</code></strong> is the true event-study effect. At event time 0, the effect on <code>Y</code> is 0.5; one period later it is 1.0; two periods later it reaches 1.2; and then it gradually decays. This is the target the estimator is meant to recover.</li>
+<li><strong><code>sigma = 0.4</code></strong> adds Gaussian noise so the data look realistic rather than perfectly synthetic.</li>
+<li><strong><code>seed = 17</code></strong> fixes the random draws so anyone who runs the code gets the same panel.</li>
+</ul>
+<p>The first six rows show unit 1 in its first six periods, all with <code>D = 0</code>. That is because unit 1 happens to be one of the never-treated units in this draw. Units that eventually receive treatment begin with <code>D = 0</code> and switch to <code>D = 1</code> at their assigned adoption period.</p>
 </section>
-<section id="fit-the-dynamic-did-estimator" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="fit-the-dynamic-did-estimator"><span class="header-section-number">4.2</span> Fit the dynamic DiD estimator</h2>
-<p>The flagship estimator in didgpu is <code>didgpu()</code> — the heterogeneity- robust dynamic DiD of de Chaisemartin &amp; D’Haultfoeuille (2024).</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">didgpu</span>(</span>
+<section id="fit-the-dynamic-did-estimator" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="fit-the-dynamic-did-estimator"><span class="header-section-number">3.2</span> Fit the dynamic DiD estimator</h2>
+<p>The primary estimator in didgpu is <code>didgpu()</code>, which implements the heterogeneity-robust dynamic DiD estimator of de Chaisemartin and D’Haultfoeuille (2024). For staggered-adoption designs, it estimates treatment effects at each event-time horizon after treatment while using comparisons that avoid already-treated units, the source of the bias that affects standard two-way fixed-effects regressions.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">didgpu</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  panel,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome    =</span> <span class="st">"Y"</span>,</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">group      =</span> <span class="st">"unit"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">time       =</span> <span class="st">"period"</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">treatment  =</span> <span class="st">"D"</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">effects    =</span> <span class="dv">4</span>,</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">placebo    =</span> <span class="dv">2</span>,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">backend    =</span> <span class="st">"r"</span>,       <span class="co"># try "cuda" once you've checked didgpu_has_cuda_support()</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">verbose    =</span> <span class="cn">FALSE</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>fit</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>You get:</p>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome   =</span> <span class="st">"Y"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">group     =</span> <span class="st">"unit"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">time      =</span> <span class="st">"period"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">treatment =</span> <span class="st">"D"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">effects   =</span> <span class="dv">4</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">placebo   =</span> <span class="dv">2</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The key arguments are straightforward:</p>
 <ul>
-<li><strong>Effects</strong> — a per-event-time matrix with the point estimate, SE, CI, and the four sample-size columns the reference reports (unweighted N, unweighted switchers, weighted N, weighted switchers).</li>
-<li><strong>Placebos</strong> — the pre-treatment falsification estimates at horizons <span class="math inline">\(-1, -2, \dots\)</span>.</li>
-<li><strong>ATE</strong> — the cumulative incidence-weighted ATE across event-times.</li>
-<li><strong>Joint tests</strong> — chi-square joint tests over the effects vector and over the placebos vector, using the bootstrap empirical covariance.</li>
+<li><code>outcome</code>, <code>group</code>, <code>time</code>, and <code>treatment</code> identify the four columns the estimator needs. Passing them as strings keeps the function signature aligned with <code>DIDmultiplegtDYN::did_multiplegt_dyn()</code>.</li>
+<li><code>effects = 4</code> requests four post-treatment event-time effects: the effect in the treatment period and in each of the next three periods.</li>
+<li><code>placebo = 2</code> requests two pre-treatment placebo estimates. These serve as falsification tests for the parallel-trends assumption: if there is no treatment effect before treatment, the placebo estimates should be close to zero.</li>
 </ul>
+<p>There is no <code>bootstrap_reps</code> argument in this call. Since version 0.1.2, the standard errors, confidence intervals, and joint-nullity tests are computed analytically from the estimator’s asymptotic influence functions, so a bootstrap is no longer required for default inference. Setting <code>bootstrap_reps</code> above zero still works, but it does not change the reported <code>SE</code> column. See the “When to add a bootstrap” section below for the practical guidance.</p>
 </section>
-<section id="add-a-bootstrap" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="add-a-bootstrap"><span class="header-section-number">4.3</span> Add a bootstrap</h2>
-<p>The point estimate is essentially free; standard errors and CIs come from a cluster bootstrap. You opt in with <code>bootstrap_reps</code>:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fit_boot <span class="ot">&lt;-</span> <span class="fu">didgpu</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  panel,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome   =</span> <span class="st">"Y"</span>, <span class="at">group =</span> <span class="st">"unit"</span>, <span class="at">time =</span> <span class="st">"period"</span>, <span class="at">treatment =</span> <span class="st">"D"</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">effects   =</span> <span class="dv">4</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">placebo   =</span> <span class="dv">2</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">bootstrap_reps =</span> <span class="dv">500</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">backend   =</span> <span class="st">"r"</span>,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed      =</span> <span class="dv">42</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">verbose   =</span> <span class="cn">TRUE</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>For a panel this small the bootstrap is fast on CPU. For larger panels, this is where the GPU pays for itself — see <a href="../chapters/08-gpu-and-performance.html">Chapter 8 — GPU &amp; Performance</a>.</p>
+<section id="read-the-output" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="read-the-output"><span class="header-section-number">3.3</span> Read the output</h2>
+<p>Printing the fitted object shows four blocks that match the output from <code>DIDmultiplegtDYN</code> line for line.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fit</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ----------------------------------------------------------------------</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        Estimation of treatment effects: Event-study effects</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ----------------------------------------------------------------------</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              Estimate SE      LB CI   UB CI   N   Switchers</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Effect_1     0.46833  0.11489 0.24315 0.69350 278 36</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Effect_2     1.03675  0.10837 0.82435 1.24914 247 36</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Effect_3     1.28974  0.11761 1.05923 1.52024 221 36</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Effect_4     1.09481  0.08919 0.92001 1.26962 201 36</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Test of joint nullity of the effects : p-value = 0.0000</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ----------------------------------------------------------------------</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     Average cumulative (total) effect per treatment unit</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ----------------------------------------------------------------------</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Estimate        SE     LB CI     UB CI         N Switchers</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   0.97241   0.08404   0.80769   1.13712       458       144</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Average number of time periods over which a treatment effect is accumulated: 2.5000</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ----------------------------------------------------------------------</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      Testing the parallel trends and no anticipation assumptions</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ----------------------------------------------------------------------</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              Estimate SE      LB CI    UB CI   N   Switchers</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Placebo_1    0.04120  0.08947 -0.13416 0.21656 278 36</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Placebo_2    0.22337  0.10129 0.02485  0.42189 247 36</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Test of joint nullity of the placebos : p-value = 0.0640</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>The Effects block.</strong> Each row is a cumulative DiD estimate at one event-time horizon. <code>Effect_1</code> is the effect in the treatment period, <code>Effect_2</code> is the effect one period later, and so on. The <code>N</code> column gives the number of observations used to compute each estimate, while <code>Switchers</code> is the number of treated units contributing to that horizon.</p>
+<p>Compare the estimates to the true profile built into the panel via <code>tau_profile = c(0.5, 1.0, 1.2, 1.0, 0.8)</code>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Horizon</th>
+<th>True effect</th>
+<th>Estimate</th>
+<th>CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Effect_1</td>
+<td>0.50</td>
+<td>0.47</td>
+<td>(0.24, 0.69)</td>
+</tr>
+<tr class="even">
+<td>Effect_2</td>
+<td>1.00</td>
+<td>1.04</td>
+<td>(0.82, 1.25)</td>
+</tr>
+<tr class="odd">
+<td>Effect_3</td>
+<td>1.20</td>
+<td>1.29</td>
+<td>(1.06, 1.52)</td>
+</tr>
+<tr class="even">
+<td>Effect_4</td>
+<td>1.00</td>
+<td>1.09</td>
+<td>(0.92, 1.27)</td>
+</tr>
+</tbody>
+</table>
+<p>Every true effect lies inside its 95% confidence interval. The estimator recovers the dynamic profile within sampling error, which is exactly what we want to see on simulated data where the truth is known.</p>
+<p>The <strong>joint-nullity test</strong> at the bottom of the Effects block tests <code>H0: all four effects are zero</code>. The p-value is effectively zero, so we reject the null that treatment had no effect at any horizon.</p>
+<p><strong>The ATE block.</strong> The row labelled “Average cumulative (total) effect per treatment unit” reports a single summary number: the switcher-weighted average effect per unit of treatment. The final line of the block, “Average number of time periods over which a treatment effect is accumulated: 2.5000”, gives the mean horizon length across switchers.</p>
+<p>A note on interpretation: the ATE in didgpu is not simply the mean of the Effects column. It is a weighted average per unit of treatment, and the two coincide only when treatment is binary and absorbing, as it is here. In settings with multivalued or continuous treatment, the ATE denominator reflects the average treatment change among switchers, so the two quantities can diverge. The function help (<code>?didgpu</code>) gives the exact formula.</p>
+<p><strong>The Placebos block.</strong> Pre-treatment placebo estimates are a falsification test. If parallel trends holds, the placebo effects should be close to zero. <code>Placebo_1</code> here is 0.04, which is comfortably near zero, while <code>Placebo_2</code> is 0.22 and its confidence interval does not include zero. The joint-nullity p-value is 0.064, which is borderline.</p>
+<p>This is an important feature even on simulated data, where the data-generating process satisfies parallel trends by construction. With finite samples, random noise can still push a placebo away from zero, and that is exactly what the test is designed to reveal. On real data, a significant placebo should prompt a careful reconsideration of whether the parallel-trends assumption is credible in the application.</p>
 </section>
-<section id="plot-the-event-study" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="plot-the-event-study"><span class="header-section-number">4.4</span> Plot the event study</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>The <code>plot()</code> method draws the placebos on negative horizons and the effects on positive horizons, with the stored CI as error bars and a horizontal dashed line at zero.</p>
-</section>
-<section id="pull-pieces-out-with-broom-style-helpers" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="pull-pieces-out-with-broom-style-helpers"><span class="header-section-number">4.5</span> Pull pieces out with broom-style helpers</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">tidy</span>(fit)           <span class="co"># one-row-per-coef data.frame</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">glance</span>(fit)         <span class="co"># one-row summary (N, n_switchers, joint p)</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit)                  <span class="co"># named numeric of point estimates</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">vcov</span>(fit)                  <span class="co"># bootstrap empirical covariance</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(fit, <span class="at">level =</span> <span class="fl">0.95</span>) <span class="co"># CIs at any level (re-fit if level differs)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>If broom is not loaded, the equivalents <code>didgpu_tidy()</code> and <code>didgpu_glance()</code> work the same way without it.</p>
-</section>
-<section id="save-a-fitted-model" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="save-a-fitted-model"><span class="header-section-number">4.6</span> Save a fitted model</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(fit, <span class="st">"did_fit.rds"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">readRDS</span>(<span class="st">"did_fit.rds"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>A didgpu fit is a plain S3 object on top of a list of matrices — it survives <code>saveRDS</code> / <code>readRDS</code> round-trips and stays portable across machines.</p>
-</section>
-<section id="where-to-go-next" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="where-to-go-next"><span class="header-section-number">4.7</span> Where to go next</h2>
+<section id="access-the-fitted-object" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="access-the-fitted-object"><span class="header-section-number">3.4</span> Access the fitted object</h2>
+<p>The fit is a <code>didgpu_result</code> object. Its structure:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(fit)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] "didgpu_result" "list"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(fit)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] "coef"                 "results"              "args"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [4] "cells_used"           "N_switchers_effect_1" "N_switchers_effect_2"</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [7] "N_switchers_effect_3" "N_switchers_effect_4" "checkpoint_dir"</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [10] "plot"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The components you will reach for most often:</p>
 <ul>
-<li><strong><a href="../chapters/03-dynamic-did.html">Chapter 3 — Dynamic DID</a></strong> — every option of <code>didgpu()</code> with worked examples.</li>
-<li><strong><a href="../chapters/08-gpu-and-performance.html">Chapter 8 — GPU &amp; Performance</a></strong> — how to make this 50× faster.</li>
-<li><strong><a href="../chapters/10-reproducibility-checkpointing.html">Chapter 10 — Reproducibility &amp; checkpointing</a></strong> — how to make a 12-hour bootstrap survive a crash.</li>
+<li><code>fit$results</code> holds the three matrices (<code>Effects</code>, <code>ATE</code>, <code>Placebos</code>) that produce the printed output.</li>
+<li><code>fit$coef</code> holds the point estimates, their analytic covariance matrix, and the influence functions used to build it.</li>
+<li><code>fit$plot</code> is a ggplot2 object of the event-study graph (shown below).</li>
+<li><code>fit$args</code> records the arguments the call was made with. Useful for reproducibility and when you resume a long-running fit from a checkpoint.</li>
 </ul>
+<p>The accessor functions covered later in this chapter are the cleaner way to pull estimates and intervals for downstream use.</p>
+</section>
+<section id="plot-the-event-study-estimates" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="plot-the-event-study-estimates"><span class="header-section-number">3.5</span> Plot the event-study estimates</h2>
+<p>Fitting the model automatically draws an event-study plot in the RStudio Plots pane. The same ggplot2 object is stored in <code>fit$plot</code>, which means you can redraw it, customize it, or save it to a file without re-estimating the model.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/quickstart_eventstudy.png" class="img-fluid figure-img"></p>
+<figcaption>didgpu event-study plot from the Quickstart fit</figcaption>
+</figure>
+</div>
+<p>The horizontal axis indexes time relative to the last untreated period before treatment begins (<code>t = 0</code>). Negative horizons are the pre-treatment placebos (<code>Placebo_2</code> at <code>-2</code>, <code>Placebo_1</code> at <code>-1</code>), the point at <code>0</code> is the reference period and is fixed at zero by construction, and the positive horizons are the post-treatment effects (<code>Effect_1</code> at <code>1</code> through <code>Effect_4</code> at <code>4</code>). The error bars show the 95% confidence intervals reported in the fit output.</p>
+<p>Reading the plot:</p>
+<ul>
+<li>The two placebo points are close to zero, but not exactly on it, which is consistent with the borderline joint-nullity p-value of 0.064 reported above.</li>
+<li>The estimated effects rise from <code>Effect_1</code> to a peak at <code>Effect_3</code>, then flatten. This matches the true profile <code>tau_profile = c(0.5, 1.0, 1.2, 1.0, 0.8)</code> used to generate the data.</li>
+<li>The confidence intervals are wide enough to reflect sampling noise, but narrow enough that the post-treatment effects are clearly separated from zero.</li>
+</ul>
+<p>To save the plot to a file for a paper or slide deck:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(<span class="st">"eventstudy.png"</span>, fit<span class="sc">$</span>plot, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To modify the plot, treat <code>fit$plot</code> as any other ggplot2 object and compose it with the usual <code>+</code> operator:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fit<span class="sc">$</span>plot <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Dynamic treatment effects: event study"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y     =</span> <span class="st">"Estimated effect on Y"</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To suppress the automatic draw entirely, pass <code>graph_off = TRUE</code> to the <code>didgpu()</code> call. The ggplot2 object remains available at <code>fit$plot</code> and can be rendered later when needed.</p>
+</section>
+<section id="access-the-estimates-programmatically" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="access-the-estimates-programmatically"><span class="header-section-number">3.6</span> Access the estimates programmatically</h2>
+<p>For downstream work, the standard accessor functions all work on a <code>didgpu_result</code> object. These are the main tools for extracting point estimates, uncertainty measures, and tidy summaries without manually re-parsing the printed output.</p>
+<p><strong>Point estimates.</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   Effect_1   Effect_2   Effect_3   Effect_4  Placebo_1  Placebo_2        ATE</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.46832720 1.03674519 1.28973624 1.09481177 0.04120344 0.22337031 0.97240510</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>coef()</code> returns the full named vector: the four dynamic effects, the two placebo estimates, and the ATE. You can subset by name when you want a single entry:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit)[<span class="st">"Effect_2"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Analytic covariance matrix.</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vcov</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>vcov()</code> returns the covariance matrix for the four dynamic effects and the two placebo estimates. The ATE is not a linear combination of those coefficients, so it does not appear in this matrix. If you need the variance for the ATE, use the <code>SE</code> column in the ATE block from <code>fit$results$ATE</code>.</p>
+<p><strong>Confidence intervals.</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(fit)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                95% LB    95% UB</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Effect_1   0.24315340 0.6935010</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Effect_2   0.82434795 1.2491424</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Effect_3   1.05923303 1.5202395</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Effect_4   0.92000820 1.2696153</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Placebo_1 -0.13415536 0.2165622</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Placebo_2  0.02485349 0.4218871</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ATE        0.80768812 1.1371221</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>These confidence intervals are the same ones reported by the original fit, at whatever level was requested in the call to <code>didgpu()</code> (<code>ci_level = 95</code> by default). The call <code>confint(fit, level = 0.90)</code> does not recompute the interval at a new level; it returns the stored 95% intervals and emits a warning telling you to re-fit the model with <code>ci_level = 0.9</code> if you want a different level. The intervals are computed from the analytic covariance matrix at fit time, not on demand.</p>
+<p><strong>Tidy data frames.</strong></p>
+<p>For a one-row-per-parameter data frame that is convenient for plotting or joining with other results, use <code>didgpu_tidy()</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">didgpu_tidy</span>(fit)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        term   estimate  std.error  statistic      p.value    conf.low   conf.high    kind</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  Effect_1 0.46832720 0.11488670  4.0764265 4.573311e-05  0.24315340 0.6935010  effect</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  Effect_2 1.03674519 0.10836793  9.5669005 1.101587e-21  0.82434795 1.2491424  effect</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  Effect_3 1.28973624 0.11760584 10.9666001 5.531336e-28  1.05923303 1.5202395  effect</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  Effect_4 1.09481177 0.08918713 12.2754452 1.227150e-34  0.92000820 1.2696153  effect</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5       ATE 0.97240510 0.08404082 11.5706286 5.805577e-31  0.80768812 1.1371221     ate</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 Placebo_1 0.04120344 0.08947042  0.4605258 6.451388e-01 -0.13415536 0.2165622 placebo</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7 Placebo_2 0.22337031 0.10128595  2.2053435 2.743000e-02  0.02485349 0.4218871 placebo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>kind</code> column distinguishes effects, the ATE, and placebo estimates, making it easy to filter or reshape the results:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">didgpu_tidy</span>(fit) <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(kind <span class="sc">==</span> <span class="st">"effect"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(term, estimate, conf.low, conf.high)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For a one-row summary of the fit, use <code>didgpu_glance()</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">didgpu_glance</span>(fit)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   n_effects n_placebos n_switchers_e1 n_obs_e1 p_jointeffects p_jointplacebo n_boot backend seed</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1         4          2             36      278              0     0.06401752      0    auto    1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>A note on <code>broom</code>.</strong> didgpu does not currently register S3 methods with the <code>broom</code> package namespace, so <code>broom::tidy(fit)</code> and <code>broom::glance(fit)</code> will error with “No <code>tidy()</code> method recognized for this list.” The native <code>didgpu_tidy()</code> and <code>didgpu_glance()</code> functions above return the same tidy-shaped objects without introducing a <code>broom</code> dependency.</p>
+</section>
+<section id="when-to-add-a-bootstrap" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="when-to-add-a-bootstrap"><span class="header-section-number">3.7</span> When to add a bootstrap</h2>
+<p>For almost every didgpu workflow, the answer is simple: you usually do not need one. Since version 0.1.2, the standard errors, confidence intervals, and joint-nullity tests are computed analytically from the estimator’s asymptotic influence functions. The output shown earlier in this chapter already contains the valid default inference. There is no hidden step being skipped by leaving <code>bootstrap_reps</code> at its default value of zero.</p>
+<p>The package makes this explicit when a non-zero <code>bootstrap_reps</code> value is passed:</p>
+<pre class="text"><code>did_multiplegt_dyn computes by default analytical standard errors -
+in most cases, there is no need to use the bootstrap option.
+Bootstrapping is a much slower alternative and we recommend it only
+in combination with the continuous option.</code></pre>
+<p>In practice, running a bootstrap on the same panel confirms that it does not change the reported standard errors:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>fit_boot <span class="ot">&lt;-</span> <span class="fu">didgpu</span>(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  panel,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome      =</span> <span class="st">"Y"</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">group        =</span> <span class="st">"unit"</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">time         =</span> <span class="st">"period"</span>,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">treatment    =</span> <span class="st">"D"</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">effects      =</span> <span class="dv">4</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">placebo      =</span> <span class="dv">2</span>,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">bootstrap_reps =</span> <span class="dv">200</span>,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed         =</span> <span class="dv">42</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">analytic  =</span> fit<span class="sc">$</span>results<span class="sc">$</span>Effects[, <span class="st">"SE"</span>],</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">bootstrap =</span> fit_boot<span class="sc">$</span>results<span class="sc">$</span>Effects[, <span class="st">"SE"</span>]</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;               analytic  bootstrap</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Effect_1     0.11488670 0.11488670</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Effect_2     0.10836793 0.10836793</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Effect_3     0.11760584 0.11760584</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Effect_4     0.08918713 0.08918713</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The two columns are identical to every printed digit, and the point estimates are unchanged. The bootstrap still performs its resampling loop and populates a bootstrap covariance object inside <code>fit_boot</code>, but the <code>SE</code> column itself remains anchored to the analytic path.</p>
+<p>When should you actually use it? One case is called out explicitly by the package: when <code>continuous</code> is set in the call to <code>didgpu()</code>. In that setting, the analytic standard errors can be somewhat liberal, and the bootstrap provides a more conservative alternative. The dynamic DiD chapter covers that path in more detail.</p>
+<p>For any other workflow (binary treatment, multivalued treatment, staggered adoption, controls, or weights), leave <code>bootstrap_reps</code> at its default. You save minutes to hours of compute time without giving up anything in the reported inference.</p>
+</section>
+<section id="save-and-reload-a-fit" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="save-and-reload-a-fit"><span class="header-section-number">3.8</span> Save and reload a fit</h2>
+<p>A <code>didgpu_result</code> is just an R list with an S3 class attached, so <code>saveRDS()</code> and <code>readRDS()</code> work exactly as they do for any other R object.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(fit, <span class="st">"quickstart_fit.rds"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>fit_reloaded <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"quickstart_fit.rds"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit_reloaded)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   Effect_1   Effect_2   Effect_3   Effect_4  Placebo_1  Placebo_2        ATE</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 0.46832720 1.03674519 1.28973624 1.09481177 0.04120344 0.22337031 0.97240510</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The reloaded fit prints the same output, preserves the same point estimates, standard errors, covariance matrix, and confidence intervals, and remains fully compatible with the accessor functions shown above.</p>
+<p>A note on strict object identity: if you run <code>identical(fit, fit_reloaded)</code>, the result is <code>FALSE</code>, not <code>TRUE</code>. The numerical components round-trip exactly: <code>identical(fit$results, fit_reloaded$results)</code> and <code>identical(fit$coef, fit_reloaded$coef)</code> both return <code>TRUE</code>. The difference comes from the ggplot2 object stored in <code>fit$plot</code>: it carries environment pointers that change when the object is serialized, and <code>identical()</code> compares those too. Nothing in the underlying estimates or inference is affected. If you need a strict equality check in a test suite, compare the components you care about directly rather than the top-level object.</p>
+<p>For long-running fits with bootstrap replicates or larger panels, the checkpoint system described in the “Reproducibility and checkpointing” chapter is usually a better choice than <code>saveRDS()</code>: it writes one cell per bootstrap replicate as the fit runs, so you can resume after a crash without redoing the full computation.</p>
+</section>
+<section id="where-to-go-next" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="where-to-go-next"><span class="header-section-number">3.9</span> Where to go next</h2>
+<p>You have now installed didgpu, generated a panel, fit the flagship dynamic DiD estimator, read the output, plotted the event-study graph, extracted estimates programmatically, understood when (and when not) to use a bootstrap, and saved a fit for later. This brings the quickstart to a close.</p>
+<p>From here, three directions are especially useful depending on your application:</p>
+<ul>
+<li><strong>Choose the right estimator for your design.</strong> didgpu offers several estimator families, and the best choice depends on how treatment is defined and which identifying assumptions you are willing to make. The <a href="../chapters/02b-choosing-estimator.html">Choosing an Estimator</a> chapter walks through the decision.</li>
+<li><strong>Go deeper on the dynamic DiD estimator.</strong> This quickstart used <code>didgpu()</code> with its default settings. The <a href="../chapters/03-dynamic-did.html">Dynamic DiD</a> chapter documents every argument, covers covariates and weights, describes the diagnostic options (<code>predict_het</code>, <code>effects_equal</code>), and explains the continuous-treatment path.</li>
+<li><strong>Apply didgpu to other causal designs.</strong> The <a href="../chapters/04-callaway-santanna.html">Callaway-Sant’Anna</a> chapter covers staggered adoption with a clearly defined control group; the <a href="../chapters/05-fect-ifect-mc.html">FEct, IFEct, and MC</a> chapter covers the counterfactual-imputation family; the <a href="../chapters/06-static-did.html">Static DID_M</a> chapter covers non-absorbing binary treatment; and the <a href="../chapters/07-continuous-treatment.html">Continuous treatment</a> chapter covers settings without a clean never-treated group.</li>
+</ul>
+<p>For longer-running work, the <a href="../chapters/10-reproducibility-checkpointing.html">Reproducibility and checkpointing</a> chapter explains how to resume fits after crashes, and the <a href="../chapters/08-gpu-and-performance.html">GPU and performance</a> chapter covers when the CUDA backend is worth setting up and which speedups to expect.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1107,8 +1274,8 @@ window.Quarto = {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/03-dynamic-did.html" class="pagination-link" aria-label="Dynamic DiD — `didgpu()`">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Dynamic DiD — <code>didgpu()</code></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/02b-choosing-estimator.html" class="pagination-link" aria-label="Choosing an estimator">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Choosing an estimator</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
